@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Settings
+{% endblock %}
+
+{% block title %}
+⚙️ Settings
+{% endblock %}
+
+{% block content %}
+
+<div class="resume-container">
+
+    <!-- Hero -->
+
+    <div class="hero">
+
+        <div class="hero-left">
+
+            <h1>⚙️ Account Settings</h1>
+
+            <p>
+
+                Manage your CareerPilot AI preferences and account information.
+
+            </p>
+
+        </div>
+
+        <div class="hero-right">
+
+            ⚙️
+
+        </div>
+
+    </div>
+
+    <!-- Profile -->
+
+    <div class="result-card">
+
+        <h2>👤 Profile</h2>
+
+        <br>
+
+        <p><strong>Username:</strong> {{ current_user.username }}</p>
+
+        <br>
+
+        <p><strong>Email:</strong> {{ current_user.email }}</p>
+
+    </div>
+
+    <br>
+
+    <!-- Preferences -->
+
+    <div class="result-card">
+
+        <h2>🎛 Preferences</h2>
+
+        <br>
+
+       <div class="setting-item">
+
+    <span>🌙 Dark Mode</span>
+
+    <label class="switch">
+
+        <input type="checkbox" id="theme-toggle">
+
+        <span class="slider"></span>
+
+    </label>
+
+    </div>
+
+        <div class="setting-item">
+
+            <span>Voice Assistant</span>
+
+            <span class="badge">Enabled</span>
+
+        </div>
+
+        <div class="setting-item">
+
+            <span>AI Interview</span>
+
+            <span class="badge">Active</span>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <!-- About -->
+
+    <div class="result-card">
+
+        <h2>ℹ About CareerPilot AI</h2>
+
+        <br>
+
+        <p>
+
+            CareerPilot AI is an AI-powered career assistant that helps students
+            prepare for interviews, improve resumes, and generate personalized
+            career roadmaps.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            <strong>Version:</strong> 1.0
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

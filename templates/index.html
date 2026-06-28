@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Dashboard
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero">
+
+    <div class="hero-left">
+
+        <h1>
+            Welcome back,
+            <span>{{ username }}</span> 👋
+        </h1>
+
+        <p>
+            Welcome to <strong>CareerPilot AI</strong>, your intelligent career assistant.
+            Practice AI interviews, improve your resume, build personalized career roadmaps,
+            and track your progress—all in one place.
+        </p>
+
+        
+
+    </div>
+
+    <div class="hero-right">
+
+        🤖
+
+    </div>
+
+</div>
+
+
+<!-- Main Features -->
+
+<div class="cards">
+
+    <a href="/interview" class="card">
+
+        <div class="card-icon">🎤</div>
+
+        <h3>AI Mock Interview</h3>
+
+        <p>
+            Practice HR and technical interviews with AI-generated questions
+            and improve your confidence.
+        </p>
+
+    </a>
+
+    <a href="/resume" class="card">
+
+        <div class="card-icon">📄</div>
+
+        <h3>Resume Analyzer</h3>
+
+        <p>
+            Upload your resume and receive ATS-friendly suggestions,
+            missing skills, and AI feedback.
+        </p>
+
+    </a>
+
+    <a href="/roadmap" class="card">
+
+        <div class="card-icon">🧭</div>
+
+        <h3>Career Roadmap</h3>
+
+        <p>
+            Generate a personalized roadmap based on your current
+            skills and dream career.
+        </p>
+
+    </a>
+
+  
+
+    <a href="/settings" class="card">
+
+        <div class="card-icon">⚙️</div>
+
+        <h3>Settings</h3>
+
+        <p>
+            Manage your account preferences
+            and personalize your CareerPilot AI experience.
+        </p>
+
+    </a>
+
+    <a href="/logout" class="card logout-card">
+
+        <div class="card-icon">🚪</div>
+
+        <h3>Logout</h3>
+
+        <p>
+            Safely sign out of your account.
+        </p>
+
+    </a>
+
+</div>
+
+{% endblock %}

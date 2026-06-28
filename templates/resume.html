@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Resume Analyzer
+{% endblock %}
+
+{% block title %}
+AI Resume Analyzer
+{% endblock %}
+
+{% block content %}
+
+<div class="resume-container">
+
+    <!-- Hero -->
+
+    <div class="hero">
+
+        <div class="hero-left">
+
+            <h1>📄 AI Resume Analyzer</h1>
+
+            <p>
+                Upload your resume and receive detailed AI feedback,
+                ATS suggestions and improvement tips.
+            </p>
+
+        </div>
+
+        <div class="hero-right">
+
+            📑
+
+        </div>
+
+    </div>
+
+    <!-- Upload Card -->
+
+    <div class="upload-card">
+
+        <h2>Upload Your Resume</h2>
+
+        <p>
+
+            Supported format: PDF
+
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input
+                type="file"
+                name="resume"
+                accept=".pdf"
+                required>
+
+            <button type="submit">
+
+                Analyze Resume
+
+            </button>
+
+            <div class="loading" id="resumeLoading">
+
+                <div class="spinner"></div>
+
+                <p>Analyzing your resume...</p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    {% if result %}
+
+    <div class="result-card">
+
+        <h2>🤖 AI Resume Analysis</h2>
+
+        <hr>
+
+        <br>
+
+        <pre>{{ result }}</pre>
+
+        <br>
+
+        <a href="/{{ pdf_path }}" download>
+
+            <button class="download-btn">
+
+                📥 Download PDF Report
+
+            </button>
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+document.querySelector("form").addEventListener("submit",function(){
+
+    document.getElementById("resumeLoading").style.display="block";
+
+});
+
+</script>
+
+{% endblock %}

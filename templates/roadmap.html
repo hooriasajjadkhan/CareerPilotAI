@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Career Roadmap
+{% endblock %}
+
+{% block title %}
+AI Career Roadmap
+{% endblock %}
+
+{% block content %}
+
+<div class="resume-container">
+
+    <!-- Hero -->
+
+    <div class="hero">
+
+        <div class="hero-left">
+
+            <h1>🧭 AI Career Roadmap</h1>
+
+            <p>
+                Generate a personalized learning roadmap based on your
+                dream career, current skills and experience level.
+            </p>
+
+        </div>
+
+        <div class="hero-right">
+
+            🚀
+
+        </div>
+
+    </div>
+
+    <!-- Form -->
+
+    <div class="upload-card">
+
+        <h2>Create Your Roadmap</h2>
+
+        <p>
+
+            Fill in the details below.
+
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="career"
+                placeholder="Dream Career (e.g. Data Scientist)"
+                required>
+
+            <input
+                type="text"
+                name="skills"
+                placeholder="Current Skills (e.g. Python, SQL, HTML)"
+                required>
+
+            <select name="level" required>
+
+                <option value="">Select Experience Level</option>
+
+                <option>Beginner</option>
+
+                <option>Intermediate</option>
+
+                <option>Advanced</option>
+
+            </select>
+
+            <button type="submit">
+
+                Generate Roadmap
+
+            </button>
+
+            <div class="loading" id="roadmapLoading">
+
+                <div class="spinner"></div>
+
+                <p>Generating your AI roadmap...</p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    {% if result %}
+
+    <div class="result-card">
+
+        <h2>🧭 Your AI Career Roadmap</h2>
+
+        <hr>
+
+        <br>
+
+        <pre>{{ result }}</pre>
+
+        <br>
+
+        <a href="/{{ pdf_path }}" download>
+
+            <button class="download-btn">
+
+                📥 Download Roadmap PDF
+
+            </button>
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+document.querySelector("form").addEventListener("submit",function(){
+
+    document.getElementById("roadmapLoading").style.display="block";
+
+});
+
+</script>
+
+{% endblock %}
